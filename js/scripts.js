@@ -71,10 +71,10 @@ function displayUser(element) {
                     <p class="modal-text">${user.email}</p>
                     <p class="modal-text cap">${user.location.city}</p>
                     <hr>
-                    <p class="modal-text">${user.cell}</p>
+                    <p class="modal-text">${user.cell.replace("-", " ")}</p>
                     <p class="modal-text">${user.location.street.number} 
                     ${user.location.street.name}, ${user.location.city}, ${user.location.state} ${user.location.postcode}</p>
-                    <p class="modal-text">Birthday: ${user.birthday.date.substr(0,10)}</p>
+                    <p class="modal-text">Birthday: ${user.birthday.date.substr(0,10).replace("-", "/").replace("-", "/")}</p>
                 </div>
             </div>
 
@@ -182,7 +182,6 @@ modalContainerDIV.addEventListener("click", (event) => {
     const currentUser = users.get(document.querySelector("div.modal-info-container h3").textContent.replace(" ", "") + "Card");
 
     let nextBoolean = false;
-    let i = 1;
     function getNextUser() {
         for (let [key, value] of users) {
             if (nextBoolean) {
