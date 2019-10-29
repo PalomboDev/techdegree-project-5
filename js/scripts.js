@@ -117,7 +117,7 @@ function handleSearch() {
 fetchResults("https://randomuser.me/api/?nat=us&results=12&inc=picture,name,email,location,cell,dob&noinfo")
     .then(results => results.forEach(result => {
         // Define basic user info from results
-        const imageSrc = result.picture.thumbnail;
+        const imageSrc = result.picture.large;
         const firstName = result.name.first;
         const lastName = result.name.last;
         const email = result.email;
@@ -251,5 +251,6 @@ modalContainerDIV.addEventListener("click", (event) => {
 
 // Simple search listener
 searchSubmit.addEventListener('click', () => {
+    event.preventDefault();
     handleSearch();
 });
