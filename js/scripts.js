@@ -117,7 +117,7 @@ function handleSearch() {
 fetchResults("https://randomuser.me/api/?nat=us&results=12&inc=picture,name,email,location,cell,dob&noinfo")
     .then(results => results.forEach(result => {
         // Define basic user info from results
-        const imageSrc = result.picture.medium;
+        const imageSrc = result.picture.thumbnail;
         const firstName = result.name.first;
         const lastName = result.name.last;
         const email = result.email;
