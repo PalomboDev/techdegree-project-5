@@ -192,8 +192,6 @@ modalContainerDIV.addEventListener("click", (event) => {
                 nextBoolean = true;
             }
         }
-
-        i++;
     }
 
     let prevUser = null;
